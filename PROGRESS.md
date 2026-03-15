@@ -1,7 +1,7 @@
 # PROGRESS.md — 영문주소변환기 진행 상황
 
 > 마지막 업데이트: 2026-03-16
-> 현재 단계: **Phase 1 — Step 4 (배포 및 검수) 진행 중**
+> 현재 단계: **Phase 1 — Step 4 거의 완료, 잔여 검수 항목 남음**
 
 ---
 
@@ -100,3 +100,20 @@
 | API 키 노출 | Next.js API Route 프록시로 키 서버사이드 처리 | [ ] |
 | AdSense Thin Content 반려 | 서브페이지 2개 + FAQ + 개인정보처리방침 (Phase 3) | [ ] |
 | Vercel 무료 한도 | Hobby 플랜 월 100GB 대역폭, 초기 충분 | [ ] |
+
+---
+
+## 다음 세션에서 할 일
+
+### 즉시 (Phase 1 마무리)
+1. 모바일 반응형 확인 — Chrome DevTools에서 모바일 뷰 체크
+2. Lighthouse 성능 측정 — Performance 90+ 목표
+3. GitHub ↔ Vercel 자동 배포 연동 확인 — 현재 CLI 수동 배포 상태, GitHub push 시 자동 배포되도록 Vercel 대시보드에서 Git Integration 설정
+
+### 정리 (선택)
+4. `C:\Projects\korean-address-converter` 삭제 — 이전 임시 경로, 중복 코드
+5. Google Drive `03_영문주소변환기` 내 node_modules 삭제 — 용량 정리
+6. `01 영문주소변환기` (한글 폴더) 삭제 — VSCode 닫은 후 가능
+
+### Phase 2 시작
+7. PROGRESS.md의 Phase 2 체크리스트 참고하여 UX 강화 작업 시작
