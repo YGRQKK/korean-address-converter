@@ -17,7 +17,7 @@
 | AI 코딩 | Claude Code for VS Code |
 | 터미널 | PowerShell (Windows 기본) |
 | 패키지 매니저 | npm |
-| Node.js | v20 LTS 이상 (설치 필요) |
+| Node.js | v24 |
 | Git | 설치 완료 |
 
 ### 터미널 명령어 주의사항
@@ -31,12 +31,13 @@
 
 | 구분 | 기술 | 비고 |
 |------|------|------|
-| 프레임워크 | Next.js 14+ (App Router) | `create-next-app` 으로 생성, TypeScript 사용 |
-| UI | Tailwind CSS + Shadcn UI | Shadcn 컴포넌트는 필요한 것만 `npx shadcn@latest add` |
+| 프레임워크 | Next.js 16 (App Router) | `create-next-app` 으로 생성, TypeScript 사용 |
+| UI | Tailwind CSS 4 | Shadcn UI는 Phase 2에서 필요 시 추가 |
 | 데이터 페칭 | SWR | API 캐싱 및 중복 호출 방지용 |
 | API | 행정안전부 도로명주소 API | 개발계정 일 500건 제한, 운영계정 전환은 추후 |
 | 호스팅 | Vercel | GitHub 연동 자동 배포 |
-| 버전관리 | GitHub | main 브랜치 단일 운용 |
+| 버전관리 | GitHub | master 브랜치 단일 운용 |
+| GitHub | https://github.com/YGRQKK/korean-address-converter | public repo |
 
 ## API 정보
 
@@ -70,10 +71,13 @@ JUSO_API_KEY=발급받은_승인키
 │   │   ├── page.tsx       # 메인 페이지 (주소 변환기)
 │   │   └── api/
 │   │       └── address/
-│   │           └── route.ts   # API 프록시 (키 보호)
+│   │           ├── route.ts        # 한글 주소 검색 프록시
+│   │           └── english/
+│   │               └── route.ts   # 영문 주소 변환 프록시
 │   ├── components/
 │   │   ├── SearchInput.tsx     # 주소 검색 입력
 │   │   ├── AddressList.tsx     # 한글 주소 검색 결과 목록
+│   │   ├── DetailInput.tsx      # 동/호수 상세주소 입력
 │   │   ├── EnglishResult.tsx   # 영문 변환 결과 + 복사 버튼
 │   │   └── CopyButton.tsx      # 항목별 복사 버튼 (토스트 포함)
 │   ├── lib/
@@ -83,8 +87,8 @@ JUSO_API_KEY=발급받은_승인키
 │       └── useAddressSearch.ts  # SWR 기반 검색 훅
 ├── public/
 │   └── favicon.ico
-├── tailwind.config.ts
-├── next.config.js
+├── postcss.config.mjs
+├── next.config.ts
 └── package.json
 ```
 

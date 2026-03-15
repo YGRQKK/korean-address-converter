@@ -1,7 +1,7 @@
 # PROGRESS.md — 영문주소변환기 진행 상황
 
-> 마지막 업데이트: 2026-03-15
-> 현재 단계: **Phase 1 — Step 3 (통합 및 예외 처리) 완료, Step 4 대기**
+> 마지막 업데이트: 2026-03-16
+> 현재 단계: **Phase 1 — Step 4 (배포 및 검수) 진행 중**
 
 ---
 
@@ -10,23 +10,23 @@
 ### Step 0: 환경 세팅
 
 - [x] Node.js v24 설치 확인
-- [ ] 행정안전부 도로명주소 API 승인키 발급
+- [x] 행정안전부 도로명주소 API 승인키 발급
   - https://business.juso.go.kr → 회원가입 → API 신청 → 개발용 승인키 발급
   - 발급 후 `.env.local`에 키 저장
-- [ ] GitHub 리포지토리 생성
+- [x] GitHub 리포지토리 생성 (https://github.com/YGRQKK/korean-address-converter)
 - [x] Next.js 프로젝트 초기화 (Next.js 16 + Tailwind CSS 4 + TypeScript)
 - [ ] Shadcn UI 초기화 (MVP에서는 Tailwind 유틸리티만으로 구현, 필요 시 추가)
 - [x] SWR 설치
 - [ ] Vercel 연동
 - [ ] 첫 배포 확인
-- **참고**: 프로젝트 로컬 경로: `C:\Projects\korean-address-converter`
+- **참고**: 프로젝트 로컬 경로: `C:\02 Antigravity\02 SideProject\01-address-converter`
 
 ### Step 1: API 프록시 구축
 
 - [x] `/src/app/api/address/route.ts` 생성 — 한글 주소 검색 프록시
 - [x] `/src/app/api/address/english/route.ts` 생성 — 영문 주소 변환 프록시
 - [x] API 응답 타입 정의 (`/src/lib/types.ts`)
-- [ ] Postman 또는 브라우저에서 API 프록시 동작 확인 (API 키 필요)
+- [x] API 프록시 동작 확인 완료
 
 ### Step 2: 핵심 UI 구현
 
@@ -39,14 +39,15 @@
 ### Step 3: 통합 및 예외 처리
 
 - [x] 메인 페이지(`page.tsx`)에서 컴포넌트 조합
-- [ ] 검색 → 결과 선택 → 영문 변환 → 복사 전체 플로우 동작 확인 (API 키 필요)
+- [x] 검색 → 결과 선택 → 영문 변환 → 복사 전체 플로우 동작 확인 완료
 - [x] API 에러 Fallback UI (한도 초과, 네트워크 오류, 빈 결과)
 - [x] 로딩 상태 UI (스켈레톤 애니메이션)
 - [ ] 모바일 반응형 확인 (Chrome DevTools)
 
 ### Step 4: 배포 및 검수
 
-- [ ] GitHub push → Vercel 자동 배포
+- [x] GitHub push 완료
+- [ ] Vercel 자동 배포
 - [ ] Vercel 환경변수에 API 키 세팅 확인
 - [ ] 실기기 테스트 (PC 브라우저 + 모바일 브라우저)
 - [ ] Lighthouse 성능 측정 (Performance 90+ 목표)
@@ -87,6 +88,7 @@
 | 날짜 | 이슈 | 상태 | 해결 |
 |------|------|------|------|
 | 2026-03-15 | Google Drive에서 npm install EPERM 에러 | 해결 | 로컬 디스크(C:\Projects)로 프로젝트 이동 |
+| 2026-03-16 | 한글/공백 경로에서 tailwindcss resolve 실패 | 해결 | 폴더명을 영문(`01-address-converter`)으로 변경 |
 
 ---
 

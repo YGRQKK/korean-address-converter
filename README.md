@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Korean Address Converter (영문주소변환기)
 
-## Getting Started
+한글 주소를 영문으로 변환하는 웹 서비스입니다.
+행정안전부 도로명주소 API를 기반으로 동작합니다.
 
-First, run the development server:
+## 주요 기능
+
+- 한글 주소 검색 (도로명/지번)
+- 영문 주소 변환 (Street, City, State, Zip)
+- 동/호수 상세주소 입력
+- 항목별 복사 + 전체 복사 (토스트 알림)
+
+## 기술 스택
+
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **Styling:** Tailwind CSS 4
+- **Data Fetching:** SWR
+- **API:** 행정안전부 도로명주소 API
+- **Hosting:** Vercel
+
+## 로컬 개발
 
 ```bash
+# 의존성 설치
+npm install
+
+# 환경변수 설정 (.env.local)
+JUSO_SEARCH_API_KEY=검색용_승인키
+JUSO_ENGLISH_API_KEY=영문변환_승인키
+JUSO_DETAIL_API_KEY=상세주소_승인키
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 에서 확인
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 배포
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+GitHub 연동 Vercel 자동 배포. Vercel 환경변수에 API 키 3개 세팅 필요.
 
-## Learn More
+## 라이선스
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
