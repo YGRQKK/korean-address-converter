@@ -17,8 +17,8 @@
 - [x] Next.js 프로젝트 초기화 (Next.js 16 + Tailwind CSS 4 + TypeScript)
 - [ ] Shadcn UI 초기화 (MVP에서는 Tailwind 유틸리티만으로 구현, 필요 시 추가)
 - [x] SWR 설치
-- [ ] Vercel 연동
-- [ ] 첫 배포 확인
+- [x] Vercel 연동 (https://01-address-converter.vercel.app)
+- [x] 첫 배포 확인
 - **참고**: 프로젝트 로컬 경로: `C:\02 Antigravity\02 SideProject\01-address-converter`
 
 ### Step 1: API 프록시 구축
@@ -47,9 +47,9 @@
 ### Step 4: 배포 및 검수
 
 - [x] GitHub push 완료
-- [ ] Vercel 자동 배포
-- [ ] Vercel 환경변수에 API 키 세팅 확인
-- [ ] 실기기 테스트 (PC 브라우저 + 모바일 브라우저)
+- [x] Vercel 배포 완료 (https://01-address-converter.vercel.app)
+- [x] Vercel 환경변수에 API 키 3개 세팅 완료
+- [x] PC 브라우저 테스트 완료
 - [ ] Lighthouse 성능 측정 (Performance 90+ 목표)
 
 ---
